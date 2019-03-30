@@ -1,21 +1,21 @@
-package com.example.plantest;
+package com.example.plantest.MainActivityP;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.ProgressBar;
 
+import com.example.plantest.ApiUtils;
 import com.example.plantest.Model.Launch;
+import com.example.plantest.R;
 
 import java.util.List;
 
@@ -30,6 +30,7 @@ public class RecyclerFragment extends Fragment {
     private List<Launch> launches;
     private LaunchAdaper.OnItemClickListaner mListaner;
 
+    private ProgressBar progressBar;
     public static RecyclerFragment newInstance() {
 
       return new RecyclerFragment();
@@ -52,7 +53,8 @@ public class RecyclerFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recycler = view.findViewById(R.id.recycler);
-
+        progressBar = view.findViewById(R.id.progressBar);
+recycler.setVisibility(View.GONE);
 
     }
 
@@ -73,6 +75,8 @@ public class RecyclerFragment extends Fragment {
 
             @Override
             public void onResponse(Call<List<Launch>> call, Response<List<Launch>> response) {
+                recycler.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
                 launches = response.body();
 
                 launchAdaper.addData(launches);

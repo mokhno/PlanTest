@@ -1,6 +1,5 @@
-package com.example.plantest;
+package com.example.plantest.MainActivityP;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.plantest.Model.Launch;
 import com.example.plantest.Model.Links;
+import com.example.plantest.R;
 import com.squareup.picasso.Picasso;
 
 public class LaunchHolder extends RecyclerView.ViewHolder {

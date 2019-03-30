@@ -1,4 +1,4 @@
-package com.example.plantest;
+package com.example.plantest.MainActivityP;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,9 @@ import android.os.Bundle;
 
 import android.widget.Toast;
 
+import com.example.plantest.LaunchDetailedP.LaunchDetailedActivity;
 import com.example.plantest.Model.Launch;
+import com.example.plantest.R;
 
 
 public class MainActivity extends AppCompatActivity implements LaunchAdaper.OnItemClickListaner {
@@ -25,8 +27,8 @@ public class MainActivity extends AppCompatActivity implements LaunchAdaper.OnIt
 
     @Override
     public void onItemClick(Launch launch) {
-        Toast.makeText(this,"launch"+launch.getMissionName(),Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(MainActivity.this,LaunchDetailedActivity.class);
+        
+        Intent intent = new Intent(MainActivity.this, LaunchDetailedActivity.class);
         intent.putExtra("ITEM",launch);
         startActivity(intent);
 
