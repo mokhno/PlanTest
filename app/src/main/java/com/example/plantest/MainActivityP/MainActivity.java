@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements LaunchAdaper.OnIt
 
     @Override
     public void onItemClick(Launch launch) {
-        
+
         Intent intent = new Intent(MainActivity.this, LaunchDetailedActivity.class);
         intent.putExtra("ITEM",launch);
         startActivity(intent);
