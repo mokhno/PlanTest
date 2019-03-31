@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.plantest.MainActivityP.LaunchAdaper;
 import com.example.plantest.Model.Launch;
 import com.example.plantest.R;
 
@@ -15,8 +16,9 @@ import java.util.List;
 
 import static com.example.plantest.MainActivityP.LaunchAdaper.TAG;
 
-public class DetailedAdapter extends RecyclerView.Adapter<DetailedHolder> {
-
+public class DetailedAdapter extends RecyclerView.Adapter<DetailedHolder>
+{
+OnImageClickListaner mImageListener;
     List<String> imagesList = new ArrayList<>();
 
 
@@ -26,11 +28,13 @@ public class DetailedAdapter extends RecyclerView.Adapter<DetailedHolder> {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         final View view = inflater.inflate(R.layout.li_images, viewGroup, false);
         return new DetailedHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull DetailedHolder detailedHolder, int i) {
 detailedHolder.bind(imagesList.get(i));
+detailedHolder.setImageListener(mImageListener);
     }
 
     @Override
@@ -41,5 +45,14 @@ detailedHolder.bind(imagesList.get(i));
         imagesList.addAll(links);
         Log.d(TAG, "addData: "+imagesList);
         notifyDataSetChanged();
+    }
+
+    public void setmImageListener(OnImageClickListaner listener){
+        mImageListener = listener;
+
+    }
+    public  interface OnImageClickListaner{
+        void  onItemClick(String string);
+
     }
 }

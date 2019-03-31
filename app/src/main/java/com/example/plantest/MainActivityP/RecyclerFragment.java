@@ -65,6 +65,7 @@ recycler.setVisibility(View.GONE);
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         recycler.setAdapter(launchAdaper);
         getAllLaunches();
+        Log.d(TAG, "Main listener  "+ mListaner);
         launchAdaper.setListaener(mListaner);
 
     }

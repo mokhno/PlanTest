@@ -13,6 +13,8 @@ import com.example.plantest.Model.Links;
 import com.example.plantest.R;
 import com.squareup.picasso.Picasso;
 
+import static com.example.plantest.MainActivityP.LaunchAdaper.TAG;
+
 public class LaunchHolder extends RecyclerView.ViewHolder {
     public static final String TAG = "tagg";
     private TextView mName;
@@ -47,6 +49,7 @@ public class LaunchHolder extends RecyclerView.ViewHolder {
         }
     }
     public void setListener(final LaunchAdaper.OnItemClickListaner listener) {
+        Log.d(TAG, "listener0000000:" + listener);
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
