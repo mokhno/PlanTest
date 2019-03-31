@@ -8,6 +8,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface ApiSpace {
-    @GET ("launches")
+    @GET ("launches/past")
     Call<List<Launch>> getLaunches();
 }

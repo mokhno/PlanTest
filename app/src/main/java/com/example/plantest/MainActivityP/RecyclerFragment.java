@@ -81,7 +81,7 @@ recycler.setVisibility(View.GONE);
 
                 launchAdaper.addData(launches);
                 Log.d(TAG, "onResponse: " + launches);
-
+                Log.d(TAG, "resp: " + call.request());
             }
 
             @Override

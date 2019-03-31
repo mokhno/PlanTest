@@ -19,6 +19,7 @@ public class Launch implements Serializable {
     @SerializedName("mission_id")
 //    @Expose
     private List<Object> missionId = null;
+
     @SerializedName("upcoming")
 //    @Expose
     private Boolean upcoming;
@@ -52,6 +53,7 @@ public class Launch implements Serializable {
     @SerializedName("ships")
 //    @Expose
     private List<Object> ships = null;
+
     @SerializedName("telemetry")
 //    @Expose
     private Telemetry telemetry;

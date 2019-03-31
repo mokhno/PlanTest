@@ -37,7 +37,7 @@ private OnItemClickListaner mListaner;
     public void onBindViewHolder(@NonNull final LaunchHolder launchHolder, final int position) {
         launchHolder.bind(launchList.get(position));
         launchHolder.setListener(mListaner);
-    }
+            }
 
 
     @Override
