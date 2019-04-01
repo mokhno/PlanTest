@@ -65,7 +65,7 @@ recycler.setVisibility(View.GONE);
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         recycler.setAdapter(launchAdaper);
         getAllLaunches();
-        Log.d(TAG, "Main listener  "+ mListaner);
+
         launchAdaper.setListaener(mListaner);
 
     }
@@ -79,10 +79,7 @@ recycler.setVisibility(View.GONE);
                 recycler.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.GONE);
                 launches = response.body();
-
                 launchAdaper.addData(launches);
-                Log.d(TAG, "onResponse: " + launches);
-                Log.d(TAG, "resp: " + call.request());
             }
 
             @Override

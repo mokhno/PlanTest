@@ -39,8 +39,7 @@ public class LaunchHolder extends RecyclerView.ViewHolder {
             link = launch.getLinks();
             String string = link.getMissionPatch();
             Uri uri = Uri.parse(string);
-            Log.d(TAG, "bind: " + uri);
-            mName.setText(launch.getMissionName());
+             mName.setText(launch.getMissionName());
             mData.setText(launch.getLaunchDateUtc());
             Picasso.get().load(uri).into(mPatch);
             mLaunch = launch;
@@ -49,7 +48,7 @@ public class LaunchHolder extends RecyclerView.ViewHolder {
         }
     }
     public void setListener(final LaunchAdaper.OnItemClickListaner listener) {
-        Log.d(TAG, "listener0000000:" + listener);
+
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
